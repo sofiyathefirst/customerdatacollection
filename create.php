@@ -10,10 +10,10 @@ $errorMessage = "";
 $successMessage = "";
 
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $pic_name = $_POST['pic_name'];
-    $company_name = $_POST['company_name'];
-    $email = $_POST['email'];
-    $phone_num = $_POST['phone_num'];
+    $pic_name = $_POST["pic_name"];
+    $company_name = $_POST["company_name"];
+    $email = $_POST["email"];
+    $phone_num = $_POST["phone_num"];
 
     do{
         if(empty($pic_name) || empty($company_name) || empty($email) || empty($phone_num)){
@@ -23,8 +23,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     //add new client to database
     
-    $sql = "INSERT INTO customer_info (pic_name, company_name, email, phone_num)" . 
-    "VALUES ('$pic_name', '$company_name'. '$email', '$phone_num')";
+    $sql = "INSERT INTO customer_info (email, pic_name, company_name, phone_num) 
+    VALUES ('$email', '$pic_name', '$company_name', '$phone_num')";
     $result = $connection->query($sql);
 
     if(!$result){
@@ -72,22 +72,22 @@ if( !empty($errorMessage)){
 <div class="row">
   <div class="col">
     <label for="pic_name" class="form-label">Name of Person In Charge</label>
-    <input type="text" class="form-control" placeholder="Name of Person In Charge" aria-label="Name of Person In Charge" value="<?php echo $pic_name; ?>">
+    <input type="text" class="form-control" name="pic_name" aria-label="Name of Person In Charge" value="<?php echo $pic_name; ?>">
   </div>
   <div class="col">
     <label for="company_name" class="form-label">Company Name</label>
-    <input type="text" class="form-control" placeholder="Company Name" aria-label="Company Name" value="<?php echo $company_name; ?>">
+    <input type="text" class="form-control" name="company_name" aria-label="Company Name" value="<?php echo $company_name; ?>">
   </div>
 </div>
 <br><br>
 <div class="row">
   <div class="col">
     <label for="email" class="form-label">Email Address</label>
-    <input type="email" class="form-control" placeholder="Email Address" aria-label="Email Address" value="<?php echo $email; ?>">
+    <input type="email" class="form-control" name="email" aria-label="Email Address" value="<?php echo $email; ?>">
   </div>
   <div class="col">
     <label for="phone_num" class="form-label">Phone Number</label>
-    <input type="text" class="form-control" placeholder="Phone Number" aria-label="Phone Number" value="<?php echo $phone_num; ?>">
+    <input type="text" class="form-control" name="phone_num" aria-label="Phone Number" value="<?php echo $phone_num; ?>">
   </div>
 </div>
 <br><br>

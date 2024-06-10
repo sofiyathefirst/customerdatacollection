@@ -38,9 +38,9 @@
                     echo"
                     <tr>
                     <td>$row[id]</td>
-                    <td>$row[email]</td>
                     <td>$row[pic_name]</td>
                     <td>$row[company_name]</td>
+                    <td>$row[email]</td>
                     <td>$row[phone_num]</td>
                     <td><a class='btn btn-danger' href='delete.php?id=$row[id]'> Delete </a></td>
                 </tr>";
