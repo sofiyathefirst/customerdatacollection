@@ -18,7 +18,6 @@
         <table class="table table-bordered">
             <thead>
                 <tr>
-                    <th>No.</th>
                     <th>Name of Company's PIC</th>
                     <th>Company Name</th>
                     <th>Company Email Address</th>
@@ -37,7 +36,6 @@
                 while($row=$result->fetch_assoc()){
                     echo"
                     <tr>
-                    <td>$row[id]</td>
                     <td>$row[pic_name]</td>
                     <td>$row[company_name]</td>
                     <td>$row[email]</td>
