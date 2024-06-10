@@ -10,6 +10,16 @@
 
 <body>
 
+<nav class="navbar" style="background-color: #f69322">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/customerdatacollection/index.php">Home</a>
+        </li>
+    </div>
+  </div>
+</nav>
     <div class="container my-5">
         <h2>JTSB Customer Data Listings</h2>
         <br>
