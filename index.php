@@ -10,35 +10,28 @@
 
 <body>
 
-<nav class="navbar" style="background-color: #f69322">
-  <div class="container-fluid">
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/customerdatacollection/index.php">Home</a>
-        </li>
-    </div>
-  </div>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <a class="navbar-brand" href="/customerdatacollectionariani/index.php">
+      <img src="ariani.png" alt="Avatar Logo" style="width:150px;" class="rounded-pill"> 
+    </a>
+    <h2>Ariani Customer Data Listings</h2>
 </nav>
     <div class="container my-5">
-        <h2>JTSB Customer Data Listings</h2>
-        <br>
-        <a type="button" class="btn btn-primary" href="/customerdatacollection/create.php">Add New Customer Data</a>
+        <a type="button" class="btn btn-primary btn-lg" href="/customerdatacollectionariani/create.php"> <strong>Add New Customer Data</strong></a>
         <br><br>
         <table class="table table-bordered">
             <thead>
                 <tr>
-                    <th>Name of Company's PIC</th>
-                    <th>Company Name</th>
-                    <th>Company Email Address</th>
-                    <th>Phone Number</th>
-                    <th>Option</th>
+                    <th class="h4"><strong>Name of Company's PIC</strong></th>
+                    <th class="h4"><strong>Company Name</strong></th>
+                    <th class="h4"><strong>Company Email Address</strong></th>
+                    <th class="h4"><strong>Phone Number</strong></th>
                 </tr>
             </thead>
             <tbody>
                 <?php 
                 include "connection.php";
-                $sql="select * from customer_info";
+                $sql="select * from customer_ariani";
                 $result = $connection->query($sql);
                 if(!$result){
                     die("Incalid query!");
@@ -46,11 +39,10 @@
                 while($row=$result->fetch_assoc()){
                     echo"
                     <tr>
-                    <td>$row[pic_name]</td>
-                    <td>$row[company_name]</td>
-                    <td>$row[email]</td>
-                    <td>$row[phone_num]</td>
-                    <td><a class='btn btn-danger' href='delete.php?id=$row[id]'> Delete </a></td>
+                    <td class='h5'>$row[pic_name]</td>
+                    <td class='h5'>$row[company_name]</td>
+                    <td class='h5'>$row[email]</td>
+                    <td class='h5'>$row[phone_num]</td>
                 </tr>";
                 }                
                 ?>

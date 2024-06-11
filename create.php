@@ -23,7 +23,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     //add new client to database
     
-    $sql = "INSERT INTO customer_info (email, pic_name, company_name, phone_num) 
+    $sql = "INSERT INTO customer_ariani (email, pic_name, company_name, phone_num) 
     VALUES ('$email', '$pic_name', '$company_name', '$phone_num')";
     $result = $connection->query($sql);
 
@@ -38,7 +38,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $successMessage = "Customer added correctly";
 
-    header("location: /customerdatacollection/index.php");
+    header("location: /customerdatacollectionariani/index.php");
     exit;
     }while(false);
 }
@@ -54,10 +54,13 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 
 <body>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <a class="navbar-brand" href="/customerdatacollectionariani/index.php">
+      <img src="ariani.png" alt="Avatar Logo" style="width:150px;" class="rounded-pill"> 
+    </a>
+    <h2>Add New Customer Data</h2>
+</nav>
 <div class="container my-5">
-<h2>Add New Customer Data</h2>
-<br>
-
 <?php
 if( !empty($errorMessage)){
     echo "
@@ -71,27 +74,27 @@ if( !empty($errorMessage)){
 
 <div class="row">
   <div class="col">
-    <label for="pic_name" class="form-label">Name of Person In Charge</label>
-    <input type="text" class="form-control" name="pic_name" aria-label="Name of Person In Charge" value="<?php echo $pic_name; ?>">
+    <label for="pic_name" class="form-label"><strong><h4>Name of Person In Charge</h4></strong></label>
+    <input type="text" class="form-control form-control-lg" name="pic_name" placeholder = "Name of Person In Charge" aria-label="Name of Person In Charge" value="<?php echo $pic_name; ?>">
   </div>
   <div class="col">
-    <label for="company_name" class="form-label">Company Name</label>
-    <input type="text" class="form-control" name="company_name" aria-label="Company Name" value="<?php echo $company_name; ?>">
+    <label for="company_name" class="form-label"><strong><h4>Company Name</h4></strong></label>
+    <input type="text" class="form-control form-control-lg" name="company_name" placeholder = "Company Name" aria-label="Company Name" value="<?php echo $company_name; ?>">
   </div>
 </div>
 <br><br>
 <div class="row">
   <div class="col">
-    <label for="email" class="form-label">Email Address</label>
-    <input type="email" class="form-control" name="email" aria-label="Email Address" value="<?php echo $email; ?>">
+    <label for="email" class="form-label"><strong><h4>Email Address</h4></strong></label>
+    <input type="email" class="form-control form-control-lg" name="email" placeholder = "Email Address" aria-label="Email Address" value="<?php echo $email; ?>">
   </div>
   <div class="col">
-    <label for="phone_num" class="form-label">Phone Number</label>
-    <input type="text" class="form-control" name="phone_num" aria-label="Phone Number" value="<?php echo $phone_num; ?>">
+    <label for="phone_num" class="form-label"><strong><h4>Phone Number</h4></strong></label>
+    <input type="text" class="form-control form-control-lg" name="phone_num" placeholder = "Phone Number" aria-label="Phone Number" value="<?php echo $phone_num; ?>">
   </div>
 </div>
 <br><br>
-<button type="submit" class="btn btn-primary">Submit</button>
+<button type="submit" class="btn btn-success btn-lg"> <strong>Submit</strong></button>
 </form>
 </div>
 </body>
